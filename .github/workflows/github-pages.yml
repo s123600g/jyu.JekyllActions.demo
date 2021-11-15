@@ -21,7 +21,6 @@ jobs:
 
       # Standard usage
       - uses: helaili/jekyll-action@v2
-      - name: Standard usage
         with:
           token: ${{ secrets.GITHUBTOKEN }}
           # Specify the Jekyll source location as a parameter
