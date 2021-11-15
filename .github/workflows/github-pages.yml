@@ -6,10 +6,32 @@ on:
       - main # or master before October 2020
 
 jobs:
-  github-pages:
+  jekyll_DeployProcess:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
+      # Use GitHub Actions' cache to shorten build times and decrease load on servers
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      # Standard usage
       - uses: helaili/jekyll-action@v2
         with:
           token: ${{ secrets.GITHUBTOKEN }}
+
+      # Specify the Jekyll source location as a parameter
+      - uses: helaili/jekyll-action@v2
+        with:
+          token: ${{ secrets.GITHUBTOKEN }}
+          jekyll_src: "sample_site"
+
+      # Specify the target branch (optional)
+      - uses: helaili/jekyll-action@v2
+        with:
+          token: ${{ secrets.GITHUBTOKEN }}
+          target_branch: "gh-pages"
