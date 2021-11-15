@@ -6,7 +6,7 @@ on:
       - main # or master before October 2020
 
 jobs:
-  jekyll_DeployProcess:
+  jekyll_publish_v1:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -21,17 +21,10 @@ jobs:
 
       # Standard usage
       - uses: helaili/jekyll-action@v2
+      - name: Standard usage
         with:
           token: ${{ secrets.GITHUBTOKEN }}
-
-      # Specify the Jekyll source location as a parameter
-      - uses: helaili/jekyll-action@v2
-        with:
-          token: ${{ secrets.GITHUBTOKEN }}
+          # Specify the Jekyll source location as a parameter
           jekyll_src: "sample_site"
-
-      # Specify the target branch (optional)
-      - uses: helaili/jekyll-action@v2
-        with:
-          token: ${{ secrets.GITHUBTOKEN }}
+          # Specify the target branch (optional)
           target_branch: "gh-pages"
