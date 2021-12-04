@@ -1,8 +1,9 @@
 name: Build and deploy Jekyll site to GitHub Pages
 
 on:
-  pull_request:
-    branches:
+  push:
+    # Set skip branch -> main
+    branches-ignore:
       - main
 
 jobs:
@@ -25,5 +26,5 @@ jobs:
           token: ${{ secrets.GITHUBTOKEN }}
           # Specify the Jekyll source location as a parameter
           jekyll_src: "sample_site"
-          # Specify the target branch (optional)
-          target_branch: "gh-pages"
+          # Set action only build event
+          build_only: true
