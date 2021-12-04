@@ -1,4 +1,4 @@
-name: Build Jekyll site to GitHub Pages
+name: Build Jekyll site to GitHub Pages When pull request event
 
 on:
   pull_request:
