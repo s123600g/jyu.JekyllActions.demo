@@ -1,4 +1,4 @@
-name: Build Jekyll site to GitHub Pages
+name: Push event with build Jekyll site
 
 on:
   push:
