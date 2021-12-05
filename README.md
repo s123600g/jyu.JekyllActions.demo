@@ -4,6 +4,8 @@ tags: Github
 description: jekyll Action 實作Demo
 ---
 
+[![Build and deploy Jekyll site to GitHub Pages](https://github.com/s123600g/jyu.JekyllActions.demo/actions/workflows/github-deployment.yml/badge.svg?branch=main&event=pull_request)](https://github.com/s123600g/jyu.JekyllActions.demo/actions/workflows/github-deployment.yml)
+
 # jyu.JekyllActions.demo
 實作 Jekyll Actions Demo
 
